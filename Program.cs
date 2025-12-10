@@ -22,6 +22,7 @@ while (player1.position < 100)
     switch (options[new Random().Next(options.Length)])
     {
         case "Ladder":
+            if (player1.position + roll > 100) continue; 
             player1.position += roll;
             break;
         case "Snake":
