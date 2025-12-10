@@ -13,13 +13,19 @@ Console.WriteLine("Welcome to Snake and Ladder Game!");
 Console.WriteLine("Press any key to start the game...");
 Console.ReadKey();
 
+int count = 0;
+
 while (player1.position < 100)
 {
     if(player1.position < 0) player1.position = 0;
     
     int roll = Dice.Roll();
+    count++;
     
-    switch (options[new Random().Next(options.Length)])
+    string option = options[new Random().Next(options.Length)];
+    Console.WriteLine($"Roll: #{count}, positon: {player1.position}, roll: {roll}, option: {option}");
+    
+    switch (option)
     {
         case "Ladder":
             if (player1.position + roll > 100) continue; 
