@@ -4,3 +4,5 @@ using System.Collections.Generic;
 using Snake_And_Ladder;
 
 Player player1 = new Player();
+
+Console.WriteLine(Dice.Roll());
