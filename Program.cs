@@ -9,16 +9,27 @@ Player player1 = new Player();
 
 String[] options = { "NoPlay", "Ladder", "Snake" };
 
-int roll = Dice.Roll();
+Console.WriteLine("Welcome to Snake and Ladder Game!");
+Console.WriteLine("Press any key to start the game...");
+Console.ReadKey();
 
-switch (options[new Random().Next(options.Length)])
+while (player1.position < 100)
 {
-    case "Ladder":
-        player1.position += roll;
-        break;
-    case "Snake":
-        player1.position -= roll;
-        break;
-    default:
-        break;
+    if(player1.position < 0) player1.position = 0;
+    
+    int roll = Dice.Roll();
+    
+    switch (options[new Random().Next(options.Length)])
+    {
+        case "Ladder":
+            player1.position += roll;
+            break;
+        case "Snake":
+            player1.position -= roll;
+            break;
+        default:
+            break;
+    }
 }
+
+Console.WriteLine("You Won!");
